@@ -18,10 +18,10 @@ namespace WebsiteD
             //IRequest request = new WebsiteRequest();
             //string url = Console.ReadLine();
 
-
             RequestHandler handler = new RequestHandler(request);
 
             Console.WriteLine(handler.RequestedUrl(urlPath));
+            //Console.WriteLine(handler.RequestedUrl(url));
 
             Console.ReadKey();
         }
