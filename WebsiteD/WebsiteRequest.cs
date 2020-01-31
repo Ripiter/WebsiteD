@@ -32,7 +32,6 @@ namespace WebsiteD
             // Get the response.  
             WebResponse response = request.GetResponse();
             // Display the status.  
-            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
 
             // Get the stream containing content returned by the server. 
             // The using block ensures the stream is automatically closed. 
