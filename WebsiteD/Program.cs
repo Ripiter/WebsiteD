@@ -12,11 +12,16 @@ namespace WebsiteD
     {
         static void Main(string[] args)
         {
-            IRequest request = new WebsiteRequest();
-            WebsiteRequestHandler handler = new WebsiteRequestHandler(request);
-            string url = Console.ReadLine();
+            string urlPath = @"C:\websiteh2ReadingFromFile.txt";
+            IRequest request = new FileRequest();
 
-            Console.WriteLine(handler.RequestedUrl(url));
+            //IRequest request = new WebsiteRequest();
+            //string url = Console.ReadLine();
+
+
+            RequestHandler handler = new RequestHandler(request);
+
+            Console.WriteLine(handler.RequestedUrl(urlPath));
 
             Console.ReadKey();
         }

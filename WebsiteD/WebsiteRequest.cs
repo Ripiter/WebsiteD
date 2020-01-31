@@ -8,10 +8,21 @@ using System.Threading.Tasks;
 
 namespace WebsiteD
 {
-    class WebsiteRequest : IRequest
+    class WebsiteRequest : IRequest, ICheckCorrectFormat
     {
+        public bool CorrectFormat(string toCheck)
+        {
+            if (toCheck.Contains("https") || toCheck.Contains("http"))
+                return true;
+
+            return false;
+        }
+
         public string Request(string url)
         {
+            if (CorrectFormat(url) == false)
+                return "Wrong url";
+
             string responseFromServer = string.Empty;
             // Create a request for the URL.   
             WebRequest request = WebRequest.Create(url);

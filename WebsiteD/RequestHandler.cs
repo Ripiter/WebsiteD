@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace WebsiteD
 {
-    class WebsiteRequestHandler
+    class RequestHandler
     {
         string url = string.Empty;
         IRequest request;
 
-        public WebsiteRequestHandler(IRequest request)
+        public RequestHandler(IRequest request)
         {
             this.request = request;
         }
@@ -19,9 +19,6 @@ namespace WebsiteD
         public string RequestedUrl(string url)
         {
             this.url = url;
-
-            if (!WebsiteLinkChecker.CorrectUrl(url))
-                return "Incorrect Link";
 
             return RetrunResponse();
         }
